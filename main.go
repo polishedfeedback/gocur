@@ -8,16 +8,10 @@ import (
   "os"
 
   "github.com/everapihq/freecurrencyapi-go"
-  "github.com/joho/godotenv"
 )
 
 
 func main(){
-
-  err := godotenv.Load()
-  if err != nil {
-    log.Println("Error loading .env file : %v", err)
-  }
 
   apiKey := os.Getenv("GOCUR_API_KEY")
   if apiKey == "" {
