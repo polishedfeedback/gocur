@@ -16,12 +16,12 @@ func main(){
 
   err := godotenv.Load()
   if err != nil {
-    log.Fatalf("Error loading .env file : %v", err)
+    log.Println("Error loading .env file : %v", err)
   }
 
-  apiKey := os.Getenv("API_KEY")
+  apiKey := os.Getenv("GOCUR_API_KEY")
   if apiKey == "" {
-    log.Fatalf("API_KEY not set in the environment")
+    log.Fatal("API_KEY not set in the environment")
   }
 
   freecurrencyapi.Init(apiKey)
